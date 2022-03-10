@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <title>Home - Car Price Predictor</title>
+</head>
+
+<body>
+  <div class="container my-2 pb-2 col-4 border rounded-3 shadow bg-secondary">
+    <form style="color: white;" action="/predict" method="POST">
+      <div class="mb-2 py-2 row">
+        <div class="container col-7">
+          <h3 class="mb-0">Car Price Calculator</h3>
+        </div>
+      </div>
+      * <i style="font-size: small;">All the fields are mandatory</i>
+      <div class="mb-3 mt-1">
+        <label for="dealer" class="form-label"><b> Are you a dealer or an individual?</b> </label>
+        <select class="form-select" aria-label="Default select example" name="dealer">
+          <option value="0">Dealer</option>
+          <option value="1">Individual</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="year" class="form-label"><b>How old is your car?</b></label>
+        <input type="number" min="0" max="70" class="form-control" id="year" name="year"
+          aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="price" class="form-label"><b>Showroom Price (In lakhs)</b></label>
+        <input type="number" name="price" step="0.1" min="0" max="1000" class="form-control" id="price">
+      </div>
+      <div class="mb-3">
+        <label for="distance" class="form-label"><b>Total Distance Traveled (In Kms)</b></label>
+        <input type="number" name="distance" class="form-control" id="distance">
+      </div>
+      <div class="mb-3">
+        <label for="owner" class="form-label"><b>Number of previous owners</b></label>
+        <input type="number" name="owner" class="form-control" min="0" max="8" id="owner">
+      </div>
+      <div class="mb-3">
+        <label for="fuel" class="form-label"><b>Fuel Type</b></label>
+        <select class="form-select" name="fuel" aria-label="Default select example">
+          <option value="1">Petrol</option>
+          <option value="2">Diesel</option>
+          <option value="3">CNG</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label for="transmission" class="form-label"><b>Transmission Type</b></label>
+        <select class="form-select" name="transmission" aria-label="Default select example">
+          <option value="1">Mannual</option>
+          <option value="0">Automatic</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn btn-outline-light"><b>Calculate Price</b></button>
+      <a href="/" class="mx-2 btn btn btn-outline-light"><b>Reset</b></a>
+      <div class="mt-3">
+        <b style="color:#ff1a1a;">{{warn}} </b>
+      </div>
+      <div class="mt-3">
+        <b>{{message}}</b>
+      </div>
+  </div>
+  </form>
+  </div>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
